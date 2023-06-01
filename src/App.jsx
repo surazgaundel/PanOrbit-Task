@@ -1,7 +1,6 @@
 import { useEffect, useState,createContext } from 'react'
-import { BrowserRouter, Router, Route, Routes } from 'react-router-dom';
 import './index.css'
-import HomePage from './component/HomePage';
+import RoutesPage from './RoutesPage';
 
 const url='https://panorbit.in/api/users.json';
 
@@ -25,7 +24,7 @@ function App() {
   return (
       <>
       <UserContext.Provider value={{user}}>
-          <HomePage/>
+          <RoutesPage/>
       </UserContext.Provider>
       </>
   )
