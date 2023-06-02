@@ -1,6 +1,7 @@
 import { useEffect, useState,createContext } from 'react'
 import './index.css'
 import RoutesPage from './RoutesPage';
+import Signout from './component/Signout';
 
 const url='https://panorbit.in/api/users.json';
 
@@ -8,7 +9,9 @@ export const UserContext=createContext();
 
 
 function App() {
-  const [user,SetUser]=useState()
+  const [user,SetUser]=useState();
+  const [values,setValues] =useState(0);
+
 
   useEffect(()=>{
     fetchUser();
@@ -20,12 +23,12 @@ function App() {
     SetUser(data.users);
   }
 
-
   return (
       <>
       <UserContext.Provider value={{user}}>
           <RoutesPage/>
       </UserContext.Provider>
+      <Signout/>
       </>
   )
 }

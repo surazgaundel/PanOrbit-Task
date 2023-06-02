@@ -1,9 +1,18 @@
-import {useContext} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import {UserContext} from '../App.jsx'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 export default function HomePage() {
     const {user}=useContext(UserContext);
+    const navigate=useNavigate();
+
+
+    const  handleSelectAccount=(item)=>{
+       navigate('/user/profile',{
+        state:item  
+      })
+    }
+
   return (
       <div className="relative">
       <div className='container'></div>
@@ -11,7 +20,7 @@ export default function HomePage() {
       <h1 className='bg-slate-100 w-full font-semibold text-slate-600 text-center rounded-t-lg py-7'>Select an account</h1>
       <div className='snap-start overflow-y-scroll scrollContainer w-full mx-2 px-3 py-4'>
         {user&&user.map(item=>{
-          return (<Link key={item.id} to={`/user`}>
+          return (<Link key={item.id} onClick={handleSelectAccount(item)} to={`/user/profile`}>
           <img className='h-10 w-10 rounded-full mx-3 my-2 inline'src={item.profilepicture} alt={item.name}/>
           <h1 className='inline px-3 font-sans text-slate-600' >{item.name}</h1>
           <hr className='text-black w-8/10'/>

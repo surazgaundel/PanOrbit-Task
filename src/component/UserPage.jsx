@@ -11,12 +11,6 @@ export default function UserPage() {
       <div>
         <NavPage/>
       </div>
-      <div>
-        <Signout/>
-      </div>
-      <div>
-        <Chat/>
-      </div>
       <Outlet/>
     </div>
   )

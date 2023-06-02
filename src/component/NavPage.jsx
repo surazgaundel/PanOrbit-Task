@@ -1,23 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 
 export default function NavPage() {
+
   return (
     <nav className='navbar'>
-        <li>
-        <Link to='/user/profile'>Profile</Link>
+        <li >
+        <NavLink to='/user/profile'>Profile</NavLink>
         </li>
         <hr/>
-        <li>
-        <Link to='/user/posts'>Posts</Link>
+        <li >
+        <NavLink to='/user/posts'>Posts</NavLink>
         </li>
         <hr/>
-        <li>
-        <Link to='/user/gallery'>Gallery</Link>
+        <li >
+        <NavLink to='/user/gallery'>Gallery</NavLink>
         </li>
         <hr/>
-        <li>
-        <Link to='/user/todo'>ToDo</Link>
+        <li >
+        <NavLink to='/user/todo'>ToDo</NavLink>
         </li>
     </nav>
   )
