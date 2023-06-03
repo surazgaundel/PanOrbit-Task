@@ -6,8 +6,7 @@ Short project description or tagline.
 ## Table of Contents
 
 - [About](#about)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Installation](#installation))
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [Note](#note)
