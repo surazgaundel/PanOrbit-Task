@@ -1,7 +1,7 @@
 import { useEffect, useState,createContext } from 'react'
 import './index.css'
 import RoutesPage from './RoutesPage';
-import Signout from './component/Signout';
+import Map from './component/Map';
 
 const url='https://panorbit.in/api/users.json';
 
@@ -28,7 +28,6 @@ function App() {
       <UserContext.Provider value={{user}}>
           <RoutesPage/>
       </UserContext.Provider>
-      <Signout/>
       </>
   )
 }

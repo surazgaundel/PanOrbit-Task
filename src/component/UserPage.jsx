@@ -7,7 +7,12 @@ import Chat from './Chat'
 
 export default function UserPage() {
   return (
-    <div className="usercontainer">
+    <div className="user-container">
+      <div className="header mt-5">
+        <div className="text-slate-400 text-3xl font-semibold">Profile</div>
+        <div><Signout/></div>
+        <hr className=''/>
+      </div>
       <div>
         <NavPage/>
       </div>

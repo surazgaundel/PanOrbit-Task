@@ -3,6 +3,7 @@ import {UserContext} from '../App'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Signout from '../component/Signout';
 import Chat from '../component/Chat';
+import Map from '../component/Map';
 
 export default function Profile() {
     // const {user}=useContext(UserContext);
@@ -19,9 +20,10 @@ export default function Profile() {
             user&& user.map(item=>{
                 return ( */}
                     <div key={id} className='profile'>
-                        <div className='profile-1'>
-                            <p>Profile</p>
+                        <div className='image-profile'>
                             <img className='profileImage'src={profilepicture} alt={name}/>
+                           </div>
+                           <div className='user-profile'>
                             <p className='fullName'>{name}</p>
                             <p>Username: <span>{username}</span></p>
                             <p>e-mail: <span>{email}</span></p>
@@ -29,24 +31,25 @@ export default function Profile() {
                             <p>Website: <span>{website}</span></p>
                             <hr/>
                         </div>
-                        <div className='profile-2'>
+                        <div className='company-profile'>
                             <p>Company</p>
                             <p>Name: <span>{company.name}</span></p>
                             <p>catchphrase: <span>{company.catchPhrase}</span></p>
                             <p>bs: <span>{company.bs}</span></p>
-                            <hr/>
                         </div>
-                        <div className='profile-3'>
+                        <div className='address-profile'>
                             <p>Address</p>
                             <p>Street: <span>{address.street}</span></p>
                             <p>Suite: <span>{address.suite}</span></p>
                             <p>City: <span>{address.city}</span></p>
                             <p>ZipCode: <span>{address.zipcode}</span></p>
                         </div>
-                        <div className='profile-4'>
+                        <div className='location-profile'>
                             <p>Lat: <span>{address.geo.lat}</span></p>
                             <p>Lng: <span>{address.geo.lng}</span></p>
                         </div>
+                        <div className='vertical-line'></div>
+                        <div className='map-profile'><Map/></div>
                     </div>
                   {/* )
              })
