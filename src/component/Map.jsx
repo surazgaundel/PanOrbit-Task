@@ -1,5 +1,6 @@
 import { GoogleMap,Marker, useJsApiLoader } from "@react-google-maps/api";
-
+import {UserContext} from '../App'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 export default function Map() {

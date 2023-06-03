@@ -1,7 +1,6 @@
 import { useEffect, useState,createContext } from 'react'
 import './index.css'
 import RoutesPage from './RoutesPage';
-import Map from './component/Map';
 
 const url='https://panorbit.in/api/users.json';
 
@@ -11,7 +10,6 @@ export const UserContext=createContext();
 function App() {
   const [user,SetUser]=useState();
   const [values,setValues] =useState(0);
-
 
   useEffect(()=>{
     fetchUser();

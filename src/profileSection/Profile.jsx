@@ -1,29 +1,22 @@
 import {useContext, useEffect, useState} from 'react'
 import {UserContext} from '../App'
-import { useLocation, useNavigate } from 'react-router-dom';
-import Signout from '../component/Signout';
-import Chat from '../component/Chat';
 import Map from '../component/Map';
 
 export default function Profile() {
-    // const {user}=useContext(UserContext);
-    const navigate=useNavigate();
-    const location = useLocation()
-    const data=location.state;
-    // const [activeUser,setActiveUser]=useState(data);
-    // console.log(data)
-    const {id,name,username,email,profilepicture,address,phone,website,company}=data;
+    const {user}=useContext(UserContext);
+
     
     return (
         <div className='profile-container'>
-        {/* {
+        {
             user&& user.map(item=>{
-                return ( */}
+                const {id,name,username,email,profilepicture,address,phone,website,company}=item;
+                return (
                     <div key={id} className='profile'>
                         <div className='image-profile'>
                             <img className='profileImage'src={profilepicture} alt={name}/>
-                           </div>
-                           <div className='user-profile'>
+                        </div>
+                        <div className='user-profile'>
                             <p className='fullName'>{name}</p>
                             <p>Username: <span>{username}</span></p>
                             <p>e-mail: <span>{email}</span></p>
@@ -51,9 +44,9 @@ export default function Profile() {
                         <div className='vertical-line'></div>
                         <div className='map-profile'><Map/></div>
                     </div>
-                  {/* )
+                  )
              })
-         }  */}
+         }  
     </div>
   )
 }
