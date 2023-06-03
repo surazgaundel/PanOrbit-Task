@@ -1,10 +1,13 @@
 import {useContext, useEffect, useState} from 'react'
 import {UserContext} from '../App'
 import Map from '../component/Map';
+import { useLocation } from 'react-router-dom';
 
 export default function Profile() {
     const {user}=useContext(UserContext);
-
+    // console.log('active',activeUser);
+    const location = useLocation();
+    console.log(location);
     
     return (
         <div className='profile-container'>

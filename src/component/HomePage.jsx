@@ -1,19 +1,24 @@
 import {createContext,useContext, useState} from 'react'
 import {UserContext} from '../App.jsx'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export const ActiveUserContext=createContext();
 
 export default function HomePage() {
     const {user}=useContext(UserContext);
-    const[activeUser,setActiveUser]=useState();
+    // const[activeUser,setActiveUser]=useState();
+    const navigate=useNavigate();
 
     const handleActiveUser=(id)=>{
       const activeItem=user.filter(item=>item.id===id);
-      setActiveUser(activeItem);
-      console.log(activeItem)
+      // setActiveUser(activeItem);
+      navigate('/user/profile',{
+        state:{activeItem}
+      })
+
     }
-    console.log(activeUser);
+
 
 
   return (
